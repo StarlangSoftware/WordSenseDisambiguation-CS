@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>NlpToolkit-WordSenseDisambiguation</PackageId>
+        <Authors>olcaytaner</Authors>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NlpToolkit-AnnotatedSentence" Version="1.0.7" />
+      <PackageReference Include="NlpToolkit-AnnotatedTree" Version="1.0.3" />
+    </ItemGroup>
+
+</Project>
