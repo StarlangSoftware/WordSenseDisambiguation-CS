@@ -57,3 +57,26 @@ Result: The imported project is listed in the Project Explorer view and files ar
 **From IDE**
 
 After being done with the downloading and opening project, select **Build Solution** option from **Build** menu. After compilation process, user can run WordSenseDisambiguation-CS.
+
+Detailed Description
+============
+
+## ParseTree
+
+In order to sense annotate a parse tree, one can use autoSemantic method of the TurkishTreeAutoSemantic class.
+
+	ParseTreeDrawable parseTree = ...
+	WordNet wordNet = new WordNet();
+	FsmMorphologicalAnalyzer fsm = new FsmMorphologicalAnalyzer();
+	TurkishTreeAutoSemantic turkishAutoSemantic = new TurkishTreeAutoSemantic(wordnet, fsm);
+	turkishAutoSemantic.autoSemantic();
+
+## Sentence
+
+In order to sense annotate a parse tree, one can use autoSemantic method of the TurkishSentenceAutoSemantic class.
+
+	AnnotatedSentence sentence = ...
+	WordNet wordNet = new WordNet();
+	FsmMorphologicalAnalyzer fsm = new FsmMorphologicalAnalyzer();
+	TurkishSentenceAutoSemantic turkishAutoSemantic = new TurkishSentenceAutoSemantic(wordnet, fsm);
+	turkishAutoSemantic.autoSemantic();
