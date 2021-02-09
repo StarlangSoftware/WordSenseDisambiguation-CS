@@ -80,3 +80,15 @@ In order to sense annotate a parse tree, one can use autoSemantic method of the 
 	FsmMorphologicalAnalyzer fsm = new FsmMorphologicalAnalyzer();
 	TurkishSentenceAutoSemantic turkishAutoSemantic = new TurkishSentenceAutoSemantic(wordnet, fsm);
 	turkishAutoSemantic.autoSemantic();
+
+# Cite
+
+	@INPROCEEDINGS{8093442,
+  	author={O. {Açıkgöz} and A. T. {Gürkan} and B. {Ertopçu} and O. {Topsakal} and B. {Özenç} and A. B. {Kanburoğlu} and İ. {Çam} and B. {Avar} and G. {Ercan} 		and O. T. {Yıldız}},
+  	booktitle={2017 International Conference on Computer Science and Engineering (UBMK)}, 
+  	title={All-words word sense disambiguation for Turkish}, 
+  	year={2017},
+  	volume={},
+  	number={},
+  	pages={490-495},
+  	doi={10.1109/UBMK.2017.8093442}}
