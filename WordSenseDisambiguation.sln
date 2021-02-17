@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordSenseDisambiguation", "WordSenseDisambiguation\WordSenseDisambiguation.csproj", "{6EA47EA9-FCEC-4C3E-ADAA-C6BF15659E9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{67D2EB38-D7D8-4E0B-A018-35B644C2DAEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{6EA47EA9-FCEC-4C3E-ADAA-C6BF15659E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA47EA9-FCEC-4C3E-ADAA-C6BF15659E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA47EA9-FCEC-4C3E-ADAA-C6BF15659E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D2EB38-D7D8-4E0B-A018-35B644C2DAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D2EB38-D7D8-4E0B-A018-35B644C2DAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D2EB38-D7D8-4E0B-A018-35B644C2DAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D2EB38-D7D8-4E0B-A018-35B644C2DAEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
