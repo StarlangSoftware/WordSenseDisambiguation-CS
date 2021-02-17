@@ -30,7 +30,7 @@ namespace WordSenseDisambiguation.AutoProcessor.Sentence
          * if it has only one sense. If there is only one sense for that multiword expression or word; it sets that sense.</summary>
          * <param name="sentence">The sentence for which word sense disambiguation will be determined automatically.</param>
          */
-        protected override void AutoLabelSingleSemantics(AnnotatedSentence.AnnotatedSentence sentence)
+        protected override bool AutoLabelSingleSemantics(AnnotatedSentence.AnnotatedSentence sentence)
         {
             AnnotatedWord twoPrevious = null, previous = null;
             AnnotatedWord twoNext = null, next = null;
@@ -126,6 +126,8 @@ namespace WordSenseDisambiguation.AutoProcessor.Sentence
                     }
                 }
             }
+
+            return true;
         }
     }
 }
