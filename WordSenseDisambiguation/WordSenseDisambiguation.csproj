@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="NlpToolkit-AnnotatedSentence" Version="1.0.7" />
+      <PackageReference Include="NlpToolkit-AnnotatedSentence" Version="1.0.10" />
       <PackageReference Include="NlpToolkit-AnnotatedTree" Version="1.0.4" />
     </ItemGroup>
 
