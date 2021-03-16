@@ -1,4 +1,6 @@
-# Word Sense Disambiguation Task
+# Word Sense Disambiguation
+
+## Task Definition
 
 The task of choosing the correct sense for a word is called word sense disambiguation (WSD). WSD algorithms take an input word *w* in its context with a fixed set of potential word senses S<sub>w</sub> of that input word and produce an output chosen from S<sub>w</sub>. In the isolated WSD task, one usually uses the set of senses from a dictionary or theasurus like WordNet. 
 
@@ -13,6 +15,33 @@ The following Table shows an example for the word 'yüz', which can refer to the
 |yüz<sup>1</sup> (hundred)|The number coming after ninety nine|
 |yüz<sup>2</sup> (swim)|move or float in water|
 |yüz<sup>3</sup> (face)|face, visage, countenance|
+
+## Data Annotation
+
+### Preparation
+
+1. Collect a set of sentences to annotate. 
+2. Each sentence in the collection must be named as xxxx.yyyyy in increasing order. For example, the first sentence to be annotated will be 0001.train, the second 0002.train, etc.
+3. Put the sentences in the same folder such as *Turkish-Phrase*.
+4. Build the [Java](https://github.com/starlangsoftware/WordSenseDisambiguation) project and put the generated sentence-semantics.jar file into another folder such as *Program*.
+5. Put *Turkish-Phrase* and *Program* folders into a parent folder.
+
+### Annotation
+
+1. Open sentence-semantics.jar file.
+2. Wait until the data load message is displayed.
+3. Click Open button in the Project menu.
+4. Choose a file for annotation from the folder *Turkish-Phrase*.  
+5. For each word in the sentence, click the word, and choose correct sense for that word.
+6. Click one of the next buttons to go to other files.
+
+## Classification DataSet Generation
+
+After annotating sentences, you can use [DataGenerator](https://github.com/starlangsoftware/DataGenerator-CS) package to generate classification dataset for the Word Sense Disambiguation task.
+
+## Generation of ML Models
+
+After generating the classification dataset as above, one can use the [Classification](https://github.com/starlangsoftware/Classification-CS) package to generate machine learning models for the Word Sense Disambiguation task.
 
 For Developers
 ============
