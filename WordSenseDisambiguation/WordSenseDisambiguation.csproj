@@ -5,11 +5,11 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>NlpToolkit-WordSenseDisambiguation</PackageId>
         <Authors>olcaytaner</Authors>
-        <PackageVersion>1.0.2</PackageVersion>
+        <PackageVersion>1.0.3</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="NlpToolkit-AnnotatedTree" Version="1.0.6" />
+      <PackageReference Include="NlpToolkit-AnnotatedTree" Version="1.0.8" />
     </ItemGroup>
 
 </Project>
