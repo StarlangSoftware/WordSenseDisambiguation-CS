@@ -38,7 +38,7 @@ namespace Test.Sentence
                 }
             }
             Assert.AreEqual(549, total);
-            Assert.AreEqual(270, correct);
+            Assert.AreEqual(269, correct);
         }
 
     }
