@@ -9,6 +9,18 @@ namespace WordSenseDisambiguation.AutoProcessor.ParseTree
     {
         protected abstract bool AutoLabelSingleSemantics(ParseTreeDrawable parseTree);
 
+        /// <summary>
+        /// The method constructs all possible senses for the word at position index in the given parse tree. The method checks
+        /// the previous two words and the current word; the previous, current and next word, current and the next
+        /// two words to add three word multiword sense (that occurs in the Turkish wordnet) to the result list. The
+        /// method then check the previous word and current word; current word and the next word to add a two word multiword
+        /// sense to the result list. Lastly, the method adds all possible senses of the current word to the result list.
+        /// </summary>
+        /// <param name="wordNet">Turkish wordnet</param>
+        /// <param name="fsm">Turkish morphological analyzer</param>
+        /// <param name="leafList">Leaves of the parse tree to be semantically disambiguated.</param>
+        /// <param name="index">Position of the word to be disambiguated.</param>
+        /// <returns>All possible senses for the word at position index in the given parse tree.</returns>
         protected List<SynSet> GetCandidateSynSets(WordNet.WordNet wordNet, FsmMorphologicalAnalyzer fsm,
             List<ParseNodeDrawable> leafList, int index)
         {
@@ -78,6 +90,10 @@ namespace WordSenseDisambiguation.AutoProcessor.ParseTree
             return synSets;
         }
 
+        /// <summary>
+        /// The method tries to semantic annotate as many words in the parse tree as possible.
+        /// </summary>
+        /// <param name="parseTree">Parse tree to be semantically disambiguated.</param>
         public void AutoSemantic(ParseTreeDrawable parseTree)
         {
             if (AutoLabelSingleSemantics(parseTree))

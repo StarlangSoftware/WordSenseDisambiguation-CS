@@ -13,6 +13,18 @@ namespace WordSenseDisambiguation.AutoProcessor.Sentence
          */
         protected abstract bool AutoLabelSingleSemantics(AnnotatedSentence.AnnotatedSentence sentence);
 
+        /// <summary>
+        /// The method constructs all possible senses for the word at position index in the given sentence. The method checks
+        /// the previous two words and the current word; the previous, current and next word, current and the next
+        /// two words to add three word multiword sense (that occurs in the Turkish wordnet) to the result list. The
+        /// method then check the previous word and current word; current word and the next word to add a two word multiword
+        /// sense to the result list. Lastly, the method adds all possible senses of the current word to the result list.
+        /// </summary>
+        /// <param name="wordNet">Turkish wordnet</param>
+        /// <param name="fsm">Turkish morphological analyzer</param>
+        /// <param name="sentence">Sentence to be semantically disambiguated.</param>
+        /// <param name="index">Position of the word to be disambiguated.</param>
+        /// <returns>All possible senses for the word at position index in the given sentence.</returns>
         protected List<SynSet> GetCandidateSynSets(WordNet.WordNet wordNet, FsmMorphologicalAnalyzer fsm,
             AnnotatedSentence.AnnotatedSentence sentence, int index)
         {
@@ -76,6 +88,10 @@ namespace WordSenseDisambiguation.AutoProcessor.Sentence
             return synSets;
         }
 
+        /// <summary>
+        /// The method tries to semantic annotate as many words in the sentence as possible.
+        /// </summary>
+        /// <param name="sentence">Sentence to be semantically disambiguated.</param>
         public void AutoSemantic(AnnotatedSentence.AnnotatedSentence sentence)
         {
             if (AutoLabelSingleSemantics(sentence))

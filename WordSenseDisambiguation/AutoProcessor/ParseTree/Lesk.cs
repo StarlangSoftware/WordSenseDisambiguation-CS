@@ -15,12 +15,26 @@ namespace WordSenseDisambiguation.AutoProcessor.ParseTree
         private readonly WordNet.WordNet _turkishWordNet;
         private readonly FsmMorphologicalAnalyzer _fsm;
 
+        /// <summary>
+        /// Constructor for the {@link AutoProcessor.Sentence.Lesk} class. Gets the Turkish wordnet and Turkish fst based
+        /// morphological analyzer from the user and sets the corresponding attributes.
+        /// </summary>
+        /// <param name="turkishWordNet">Turkish wordnet</param>
+        /// <param name="fsm">Turkish morphological analyzer</param>
         public Lesk(WordNet.WordNet turkishWordNet, FsmMorphologicalAnalyzer fsm)
         {
             this._turkishWordNet = turkishWordNet;
             this._fsm = fsm;
         }
 
+        /// <summary>
+        /// Calculates the number of words that occur (i) in the definition or example of the given synset and (ii) in the
+        /// given parse tree.
+        /// </summary>
+        /// <param name="synSet">Synset of which the definition or example will be checked</param>
+        /// <param name="leafList">Leaf nodes of the parse tree.</param>
+        /// <returns>The number of words that occur (i) in the definition or example of the given synset and (ii) in the given
+        /// parse tree.</returns>
         private int Intersection(SynSet synSet, List<ParseNodeDrawable> leafList){
             string[] words1;
             if (synSet.GetExample() != null){
@@ -43,6 +57,16 @@ namespace WordSenseDisambiguation.AutoProcessor.ParseTree
             return count;
         }
 
+        /// <summary>
+        /// The method annotates the word senses of the words in the parse tree according to the simplified Lesk algorithm.
+        /// Lesk is an algorithm that chooses the sense whose definition or example shares the most words with the target
+        /// word’s neighborhood. The algorithm processes target words one by one. First, the algorithm constructs an array of
+        /// all possible senses for the target word to annotate. Then for each possible sense, the number of words shared
+        /// between the definition of sense synset and target tree is calculated. Then the sense with the maximum
+        /// intersection count is selected.
+        /// </summary>
+        /// <param name="parseTree">Parse tree to be annotated.</param>
+        /// <returns>True, if at least one word is semantically annotated, false otherwise.</returns>
         protected override bool AutoLabelSingleSemantics(ParseTreeDrawable parseTree)
         {
             var random = new Random(1);

@@ -13,12 +13,24 @@ namespace WordSenseDisambiguation.AutoProcessor.ParseTree
         private readonly WordNet.WordNet _turkishWordNet;
         private readonly FsmMorphologicalAnalyzer _fsm;
 
+        /// <summary>
+        /// Constructor for the {@link TurkishTreeAutoSemantic} class. Gets the Turkish wordnet and Turkish fst based
+        /// morphological analyzer from the user and sets the corresponding attributes.
+        /// </summary>
+        /// <param name="turkishWordNet">Turkish wordnet</param>
+        /// <param name="fsm">Turkish morphological analyzer</param>
         public TurkishTreeAutoSemantic(WordNet.WordNet turkishWordNet, FsmMorphologicalAnalyzer fsm)
         {
             this._turkishWordNet = turkishWordNet;
             this._fsm = fsm;
         }
 
+        /// <summary>
+        /// The method checks the number of possible senses of each word in the parse tree. If all words have only one
+        /// possible sense, it annotates the words with the corresponding sense. Otherwise, it does not annotate any words.
+        /// </summary>
+        /// <param name="parseTree">The parse tree for which word sense annotation will be done automatically.</param>
+        /// <returns>True, if at least one word is semantically annotated, false otherwise.</returns>
         protected override bool AutoLabelSingleSemantics(ParseTreeDrawable parseTree)
         {
             var modified = false;

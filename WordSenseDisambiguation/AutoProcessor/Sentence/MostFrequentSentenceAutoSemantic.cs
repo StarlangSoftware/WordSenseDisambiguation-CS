@@ -11,6 +11,12 @@ namespace WordSenseDisambiguation.AutoProcessor.Sentence
         private readonly WordNet.WordNet _turkishWordNet;
         private readonly FsmMorphologicalAnalyzer _fsm;
 
+        /// <summary>
+        /// Constructor for the {@link MostFrequentSentenceAutoSemantic} class. Gets the Turkish wordnet and Turkish fst based
+        /// morphological analyzer from the user and sets the corresponding attributes.
+        /// </summary>
+        /// <param name="turkishWordNet">Turkish wordnet</param>
+        /// <param name="fsm">Turkish morphological analyzer</param>
         public MostFrequentSentenceAutoSemantic(WordNet.WordNet turkishWordNet, FsmMorphologicalAnalyzer fsm)
         {
             this._turkishWordNet = turkishWordNet;
