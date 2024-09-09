@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>NlpToolkit-WordSenseDisambiguation</PackageId>
         <Authors>olcaytaner</Authors>
         <PackageVersion>1.0.3</PackageVersion>
+        <TargetFrameworks>netcoreapp3.1;net8.0</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
