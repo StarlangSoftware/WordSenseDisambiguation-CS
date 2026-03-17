@@ -43,6 +43,10 @@ After annotating sentences, you can use [DataGenerator](https://github.com/starl
 
 After generating the classification dataset as above, one can use the [Classification](https://github.com/starlangsoftware/Classification-CS) package to generate machine learning models for the Word Sense Disambiguation task.
 
+Simple Web Interface
+============
+[Link 1](http://104.247.163.162/nlptoolkit/turkish-word-sense-disambiguation.html) [Link 2](https://starlangsoftware.github.io/nlptoolkit-web-simple/turkish-word-sense-disambiguation.html)
+
 Video Lectures
 ============
 
